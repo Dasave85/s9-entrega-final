@@ -1,3 +1,9 @@
+import { RouterApp } from "./router/RouterApp";
+
 export const App = () => {
-  return <div>App</div>;
+  return (
+    <>
+      <RouterApp />
+    </>
+  );
 };
