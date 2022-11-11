@@ -1,9 +1,13 @@
-import { RouterApp } from "./router/RouterApp";
+import { Provider } from "react-redux";
+import { RouterApp } from "./router";
+import { store } from "./store";
 
 export const App = () => {
   return (
     <>
-      <RouterApp />
+      <Provider store={store}>
+        <RouterApp />
+      </Provider>
     </>
   );
 };

@@ -1,10 +1,15 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { LoginPage, RegisterPage } from "../auth";
-import { BurgerApp } from "../burgerApp/pages/BurgerApp";
+import { BurgerApp } from "../burgerApp";
+import { CheckingAuth } from "../ui";
 
 export const RouterApp = () => {
-  const isLogin = true;
+  const isLogin = false;
+
+  if (isLogin) {
+    return <CheckingAuth />;
+  }
   return (
     <>
       <BrowserRouter>
