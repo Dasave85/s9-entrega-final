@@ -16,7 +16,7 @@ export const useCartStore = () => {
     (state) => state.cart
   );
   const { activeBurger } = useSelector((state) => state.burger);
-  const { onCloseBurgerModal } = useUiStore();
+  const { onCloseBurgerModal, onShowDeleteBurger } = useUiStore();
 
   const dispatch = useDispatch();
 
@@ -81,7 +81,10 @@ export const useCartStore = () => {
   };
 
   const onDeleteItem = (burger) => {
-    dispatch(deleteBurger(burger));
+    onShowDeleteBurger();
+    setTimeout(() => {
+      dispatch(deleteBurger(burger));
+    }, 1000);
   };
 
   return {

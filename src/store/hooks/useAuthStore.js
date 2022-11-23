@@ -84,8 +84,8 @@ export const useAuthStore = () => {
   };
 
   const startLogout = async () => {
-    onResetCart();
     await signOut(FirebaseAuth);
+    onResetCart();
   };
   const deleteErrorMessage = () => {
     dispatch(onDeleteErrorMessage());
