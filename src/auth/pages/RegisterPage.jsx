@@ -5,6 +5,9 @@ import "animate.css";
 
 import { LayoutStyled } from "./LayoutStyled";
 import { Button, FormHelperText, Link, TextField } from "@mui/material";
+import { useAuthStore } from "../../store/hooks/useAuthStore";
+import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 export const RegisterPage = () => {
   const {
@@ -13,7 +16,23 @@ export const RegisterPage = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const {
+    isChecking,
+    startRegisterWithEmailPassword,
+    errorMessage,
+    deleteErrorMessage,
+  } = useAuthStore();
+
+  const onSubmit = (data) => {
+    startRegisterWithEmailPassword(data);
+  };
+
+  useEffect(() => {
+    if (!!errorMessage) {
+      Swal.fire("Error de credenciales", "Email ya registrado.", "error");
+      deleteErrorMessage();
+    }
+  }, [errorMessage]);
 
   return (
     <LayoutStyled title={"Register"}>
@@ -23,16 +42,16 @@ export const RegisterPage = () => {
             fullWidth
             label="name"
             placeholder="user"
-            error={!!errors.name}
+            error={!!errors.displayName}
             type="text"
-            {...register("name", {
+            {...register("displayName", {
               required: "El nombre es obligatorio",
             })}
           ></TextField>
-          {errors?.name && (
+          {errors?.displayName && (
             <div className="animate__animated animate__headShake">
               <FormHelperText sx={{ ml: 2 }} error>
-                {errors.name.message}
+                {errors.displayName.message}
               </FormHelperText>
             </div>
           )}
@@ -86,7 +105,13 @@ export const RegisterPage = () => {
         </Grid>
 
         <Grid container sx={{ mt: 3 }}>
-          <Button fullWidth type="submit" variant="contained" color="primary">
+          <Button
+            disabled={isChecking}
+            fullWidth
+            type="submit"
+            variant="contained"
+            color="primary"
+          >
             Sign In
           </Button>
         </Grid>

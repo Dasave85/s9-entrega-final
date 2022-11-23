@@ -5,15 +5,33 @@ import { LayoutStyled } from "./LayoutStyled";
 import "animate.css";
 import { FormHelperText, TextField, Button, Link } from "@mui/material";
 import { Google } from "@mui/icons-material";
+import { useAuthStore } from "../../store/hooks/useAuthStore";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 export const LoginPage = () => {
+  const {
+    isChecking,
+    startLoginWithGoogle,
+    startLoginWithEmailPassword,
+    errorMessage,
+    deleteErrorMessage,
+  } = useAuthStore();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => startLoginWithEmailPassword(data);
+
+  useEffect(() => {
+    if (!!errorMessage) {
+      Swal.fire("Error de credenciales", "", "error");
+      deleteErrorMessage();
+    }
+  }, [errorMessage]);
 
   return (
     <LayoutStyled title={"Login"}>
@@ -68,16 +86,24 @@ export const LoginPage = () => {
 
         <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid xs={6}>
-            <Button fullWidth type="submit" variant="contained" color="primary">
+            <Button
+              disabled={isChecking}
+              fullWidth
+              type="submit"
+              variant="contained"
+              color="primary"
+            >
               Login
             </Button>
           </Grid>
           <Grid xs={6}>
             <Button
+              disabled={isChecking}
               fullWidth
               variant="contained"
               color="primary"
               startIcon={<Google />}
+              onClick={startLoginWithGoogle}
             >
               Google
             </Button>

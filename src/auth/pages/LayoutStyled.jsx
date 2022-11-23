@@ -10,7 +10,11 @@ export const LayoutStyled = ({ children, title }) => {
       alignItems="center"
       sx={{ height: "100vh" }}
     >
-      <Grid xs={12} sx={{ padding: 3, width: 480 }}>
+      <Grid
+        className="fadeIn animate__animated animate__fadeIn"
+        xs={12}
+        sx={{ padding: 3, width: 480 }}
+      >
         <Typography
           variant="h4"
           color="initial"

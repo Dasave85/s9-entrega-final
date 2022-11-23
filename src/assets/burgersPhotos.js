@@ -1,0 +1,18 @@
+export const burgerPhotos = [
+  "https://www.honestburgers.co.uk/wp-content/uploads/2022/08/smashed-single.webp",
+  "https://mlbmbvodvbvn.i.optimole.com/w:900/h:600/q:100/f:avif/https://veganliftz.com/wp-content/uploads/2022/11/Best-Vegan-Burgers-for-BBQ-Review-2021.jpg",
+  "https://www.wikihow.com/images/thumb/3/3d/Make-a-Krabby-Patty-Step-13-Version-6.jpg/aid1004609-v4-728px-Make-a-Krabby-Patty-Step-13-Version-6.jpg",
+  "https://www.max.se/contentassets/093fc9201de04f648ea20afee581bafe/product_frisco-cheese-n-bacon.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+  "https://www.max.se/contentassets/f6eff8ddf03441ac9ba3948ecff1fb04/burgers-gdl-crunchy-nacho-1.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+  "https://www.max.se/contentassets/297c9781f4e34318ab63df3535fa1561/product_gdl-umami-bacon-burger2.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+  "https://www.max.se/contentassets/80851e9c275642b3834b216a880941ff/product_dubbel-friscoburgare.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+  "https://burger-meister.de/wp-content/uploads/2022/06/Burgermeister-Ubermeister.jpg",
+  "https://www.max.se/contentassets/e41a403e54d9433baf099e763a80689d/product_maxburgare.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+  "https://burger-meister.de/wp-content/uploads/2021/06/Burgermeister-Waldmeister-Veggi-Burger.jpg",
+  "https://www.max.se/contentassets/3fd1bf9eab494dbdbcb100d556e2fa5b/c5_single_chili-bbq-bearnaise_plantbeef_se_no_dk.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+  "https://www.max.se/contentassets/1cdab89f9e774f128502c11e6545bc04/product_delivery-cheezy-plant-beef.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+  "https://www.max.se/contentassets/44670564cc944725b81c6c5234b31db8/product_gdl-umami-halloumi2.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+  "https://www.max.se/contentassets/093fc9201de04f648ea20afee581bafe/product_frisco-cheese-n-bacon.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+  "https://www.max.se/contentassets/c82dbb65f4314a03a7f1237d2c4a2772/c5_single_chili-bbq-bearnaise_beef_se_no_dk.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+  "https://www.max.se/contentassets/c5cfa72f1a794f92a587e5224edfad9b/product_grand-deluxe-cheese-n-bacon.png?width=1160&sharpen=5&sigma=1,4&threshold=0",
+];

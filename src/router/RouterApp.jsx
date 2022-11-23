@@ -1,22 +1,40 @@
+import { useEffect } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { LoginPage, RegisterPage } from "../auth";
-import { BurgerApp } from "../burgerApp";
+import {
+  HomePage,
+  PedidosPage,
+  RestaurantePage,
+  ShoppingCartPage,
+} from "../burgerApp";
+import { useAuthStore, useBurgerStore, useCheckingUser } from "../store/hooks";
+
 import { CheckingAuth } from "../ui";
 
 export const RouterApp = () => {
-  const isLogin = false;
+  const isChecking = useCheckingUser();
+  const { status: isLogin } = useAuthStore();
 
-  if (isLogin) {
+  const { getBurgers } = useBurgerStore();
+
+  useEffect(() => {
+    getBurgers();
+  }, []);
+
+  if (isChecking) {
     return <CheckingAuth />;
   }
   return (
     <>
       <BrowserRouter>
         <Routes>
-          {isLogin ? (
+          {isLogin === "authenticated" ? (
             <>
-              <Route path="/" element={<BurgerApp />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/restaurante" element={<RestaurantePage />} />
+              <Route path="/pedido" element={<PedidosPage />} />
+              <Route path="/cart" element={<ShoppingCartPage />} />
               <Route path="/*" element={<Navigate to="/" />} />
             </>
           ) : (
