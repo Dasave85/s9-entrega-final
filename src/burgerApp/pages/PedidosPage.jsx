@@ -4,6 +4,7 @@ import { useBurgerStore } from "../../store/hooks/useBurgerStore";
 import BurgerCard from "../components/BurgerCard";
 import { LayoutPage } from "./LayoutPage/LayoutPage";
 import { burgerPhotos } from "../../assets/burgersPhotos";
+import "animate.css";
 
 export const PedidosPage = () => {
   const { burgerList } = useBurgerStore();

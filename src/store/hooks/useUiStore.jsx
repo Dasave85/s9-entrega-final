@@ -1,10 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { closeBurgerModal, openBurgerModal, setShowDeleteBurger } from "../ui";
+import { closeBurgerModal, openBurgerModal } from "../ui";
 
 export const useUiStore = () => {
-  const { isOpenburgerModal, showDeleteBurger } = useSelector(
-    (state) => state.ui
-  );
+  const { isOpenburgerModal } = useSelector((state) => state.ui);
   const dispatch = useDispatch();
 
   const onOpenBurgerModal = () => {
@@ -14,18 +12,12 @@ export const useUiStore = () => {
     dispatch(closeBurgerModal());
   };
 
-  const onShowDeleteBurger = () => {
-    dispatch(setShowDeleteBurger());
-  };
-
   return {
     //PROPERTIES
     isOpenburgerModal,
-    showDeleteBurger,
 
     //METHODS
     onOpenBurgerModal,
     onCloseBurgerModal,
-    onShowDeleteBurger,
   };
 };

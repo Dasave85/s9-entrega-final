@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Unstable_Grid2";
-
+import "animate.css";
 import Typography from "@mui/material/Typography";
 
 export const LayoutStyled = ({ children, title }) => {

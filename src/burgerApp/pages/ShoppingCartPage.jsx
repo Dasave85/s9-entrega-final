@@ -7,10 +7,10 @@ import {
   TextField,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-
+import "animate.css";
 import { burgerPhotos } from "../../assets/burgersPhotos";
 
-import { useAuthStore, useCartStore, useUiStore } from "../../store/hooks";
+import { useAuthStore, useCartStore } from "../../store/hooks";
 
 import { LayoutPage } from "./LayoutPage/LayoutPage";
 const orderNumber = Math.floor(Math.random() * 10000);
@@ -18,8 +18,6 @@ const orderNumber = Math.floor(Math.random() * 10000);
 export const ShoppingCartPage = () => {
   const { burgersCartList, totalPrice, onUpdateQuantity } = useCartStore();
   const { displayName } = useAuthStore();
-  const { showDeleteBurger } = useUiStore();
-  //TODO IMPLEMENTAR SHOWDELETE CON USEREF
 
   const onChangeInput = (e, burger) => {
     onUpdateQuantity(burger, Number(e.target.value));

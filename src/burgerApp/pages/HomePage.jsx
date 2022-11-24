@@ -4,6 +4,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import { Typography, Button } from "@mui/material";
 import img from "../../assets/burger_french_fries_4k_hd_food-1920x1080.jpg";
 import { useNavigate } from "react-router-dom";
+import "animate.css";
 
 const styles = {
   container: {
