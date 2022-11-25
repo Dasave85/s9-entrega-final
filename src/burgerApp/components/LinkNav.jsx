@@ -6,8 +6,8 @@ import Grid from "@mui/material/Unstable_Grid2";
 export const LinkNav = () => {
   return (
     <Box sx={{ width: "100%" }}>
-      <Grid container spacing={3} justifyContent="space-evenly">
-        <Grid>
+      <Grid container rowSpacing={2}>
+        <Grid xs={12} md={4}>
           <Link
             component={LinkRouter}
             sx={{ textDecoration: "none" }}
@@ -17,7 +17,7 @@ export const LinkNav = () => {
             <Typography variant="h6">HOME</Typography>
           </Link>
         </Grid>
-        <Grid>
+        <Grid xs={12} md={4}>
           <Link
             component={LinkRouter}
             sx={{ textDecoration: "none" }}
@@ -27,7 +27,7 @@ export const LinkNav = () => {
             <Typography variant="h6">RESTAURANTE</Typography>
           </Link>
         </Grid>
-        <Grid>
+        <Grid xs={12} md={4}>
           <Link
             component={LinkRouter}
             sx={{ textDecoration: "none" }}

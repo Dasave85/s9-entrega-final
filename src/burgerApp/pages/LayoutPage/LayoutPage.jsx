@@ -13,23 +13,27 @@ export const LayoutPage = ({ children }) => {
   const navigate = useNavigate();
   const { totalItemsToCart } = useCartStore();
   return (
-    <Box sx={{ height: "100vh", width: "100vw" }}>
-      <Grid
-        container
-        justifyContent="space-between"
-        sx={{ height: "150px", background: "#05032d" }}
-      >
+    <Box position="absolute" sx={{ height: "100vh", width: "100vw" }}>
+      <Grid container sx={{ background: "#05032d" }}>
         <Grid
           display="flex"
           justifyContent={"space-around"}
           alignItems={"center"}
-          xs={4}
+          xs={12}
           md={5}
+          order={{ xs: 2, md: 1 }}
           sx={{ color: "white", textAlign: "center" }}
         >
           <LinkNav />
         </Grid>
-        <Grid display="flex" justifyContent="center" alignItems="center" xs={2}>
+        <Grid
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          xs={12}
+          md={2}
+          order={{ xs: 1, md: 2 }}
+        >
           <img
             src={logo}
             alt="logo"
@@ -37,12 +41,13 @@ export const LayoutPage = ({ children }) => {
           />
         </Grid>
         <Grid
+          xs={12}
           display="flex"
-          justifyContent="end"
+          justifyContent={{ xs: "center", md: "end" }}
           alignItems="center"
-          xs={4}
           md={5}
-          sx={{ p: 2 }}
+          sx={{ pr: 2 }}
+          order={{ xs: 3 }}
         >
           <IconButton onClick={() => navigate("/cart")} sx={{ color: "white" }}>
             <Badge
