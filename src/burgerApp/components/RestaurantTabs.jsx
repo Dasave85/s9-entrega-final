@@ -24,11 +24,10 @@ export const RestaurantTabs = () => {
     >
       <TabContext value={value}>
         <Grid
-          container
-          xs={11}
+          xs={12}
           display="flex"
-          justifyContent="flex-end"
-          sx={{ mt: 5, mr: 20 }}
+          justifyContent={{ xs: "center", md: "flex-end" }}
+          sx={{ my: 3, mr: { xs: 2, md: 20 } }}
         >
           <Box
             display="flex"
@@ -36,8 +35,8 @@ export const RestaurantTabs = () => {
             sx={{ borderBottom: 1, borderColor: "divider" }}
           >
             <TabList onChange={handleChange} aria-label="tab-restaurant">
-              <Tab sx={{ mx: 5 }} label="Instalaciones" value="1" />
-              <Tab sx={{ mx: 5 }} label="Personal" value="2" />
+              <Tab sx={{ mx: 2 }} label="Instalaciones" value="1" />
+              <Tab sx={{ mx: 2 }} label="Personal" value="2" />
             </TabList>
           </Box>
         </Grid>
@@ -47,11 +46,9 @@ export const RestaurantTabs = () => {
               xs={12}
               md={6}
               sx={{
-                width: "100%",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                p: 5,
               }}
             >
               <TabPanel value="1">
@@ -64,8 +61,9 @@ export const RestaurantTabs = () => {
                   sx={{ maxWidth: "400px" }}
                 />
               </TabPanel>
-              <TabPanel sx={{ p: 8 }} value="2">
+              <TabPanel value="2">
                 <Typography
+                  sx={{ p: { xs: 2, md: 6 } }}
                   className="animate__animated animate__fadeIn"
                   variant="h4"
                   fontWeight={200}
@@ -84,11 +82,11 @@ export const RestaurantTabs = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                p: 5,
               }}
             >
               <TabPanel value="1">
                 <Typography
+                  sx={{ p: { xs: 2, md: 6 } }}
                   className="animate__animated animate__fadeIn"
                   variant="h4"
                   fontWeight={200}
@@ -100,9 +98,9 @@ export const RestaurantTabs = () => {
                   de Barcelona, al menos así lo consideran nuestros clientes.
                 </Typography>
               </TabPanel>
-              <TabPanel value="2">
+              <TabPanel sx={{ maxWidth: "100vw" }} value="2">
                 <img
-                  className="animate__animated animate__fadeInRight"
+                  className="animate__animated animate__fadeInUp"
                   src={personal}
                   alt="personal"
                   height="auto"
