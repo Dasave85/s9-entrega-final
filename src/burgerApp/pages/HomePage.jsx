@@ -28,7 +28,7 @@ export const HomePage = () => {
           style={styles.container}
           sx={{ height: "calc(100vh - 150px)" }}
         >
-          <Grid xs={12} sx={{ m: 7 }}>
+          <Grid xs={12} sx={{ m: { xs: 2, md: 7 } }}>
             <Typography
               variant="h3"
               fontWeight={400}
