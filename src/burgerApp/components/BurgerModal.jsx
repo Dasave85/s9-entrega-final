@@ -14,11 +14,10 @@ import { ShoppingCart } from "@mui/icons-material";
 
 const style = {
   position: "absolute",
-
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 450,
+  width: { xs: "100%", sm: "450px" },
   bgcolor: "background.paper",
   borderRadius: "5px",
   boxShadow: 2,
@@ -46,7 +45,7 @@ export const BurgerModal = () => {
       >
         <Fade in={isOpenburgerModal}>
           <Box sx={style}>
-            <Card sx={{ width: "auto" }}>
+            <Card sx={{ width: "auto", height: { xs: "100%", sm: "auto" } }}>
               <CardContent>
                 <Typography
                   variant="h5"

@@ -27,7 +27,7 @@ export const ShoppingCartPage = () => {
       <Paper
         className="animate__animated animate__fadeIn"
         elevation={24}
-        sx={{ m: 10, p: 2 }}
+        sx={{ m: { xs: 2, md: 10 }, p: 2 }}
       >
         <Grid sx={{ m: 2 }}>
           <Grid display="flex" justifyContent="center" sx={{ my: 3 }}>
