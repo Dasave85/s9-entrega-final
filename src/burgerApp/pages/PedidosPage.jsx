@@ -3,7 +3,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import { useBurgerStore } from "../../store/hooks/useBurgerStore";
 import BurgerCard from "../components/BurgerCard";
 import { LayoutPage } from "./LayoutPage/LayoutPage";
-import { burgerPhotos } from "../../assets/burgersPhotos";
+
 import "animate.css";
 
 export const PedidosPage = () => {
@@ -26,7 +26,7 @@ export const PedidosPage = () => {
                   md={4}
                   lg={3}
                 >
-                  <BurgerCard img={burgerPhotos[burger.id]} burger={burger} />
+                  <BurgerCard burger={burger} />
                 </Grid>
               )
           )}

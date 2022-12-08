@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import { useBurgerStore, useCartStore, useUiStore } from "../../store/hooks";
 
 import { Card, CardContent, CardMedia, IconButton } from "@mui/material";
-import { burgerPhotos } from "../../assets/burgersPhotos";
+
 import { ShoppingCart } from "@mui/icons-material";
 
 const style = {
@@ -27,7 +27,7 @@ export const BurgerModal = () => {
   const { isOpenburgerModal, onCloseBurgerModal } = useUiStore();
   const { activeBurger } = useBurgerStore();
   const { addBurgerToCart } = useCartStore();
-  const { id, name, description, ingredients, price } = activeBurger;
+  const { name, description, price, img } = activeBurger;
   return (
     <div>
       <Modal
@@ -57,14 +57,14 @@ export const BurgerModal = () => {
                 <CardMedia
                   component="img"
                   height="auto"
-                  image={burgerPhotos[id]}
+                  image={img}
                   alt={name}
                   sx={{ my: 2 }}
                 />
                 <Typography variant="body2" color="text.secondary">
                   {description}
                 </Typography>
-                <Typography
+                {/* <Typography
                   variant="h6"
                   sx={{ mt: 2, pb: 0 }}
                   color="text.secondary"
@@ -83,7 +83,7 @@ export const BurgerModal = () => {
                       </Grid>
                     ))}
                   </Grid>
-                </Typography>
+                </Typography> */}
                 <Grid
                   display="flex"
                   alignContent="center"

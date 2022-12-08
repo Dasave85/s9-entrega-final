@@ -1,5 +1,7 @@
+import { collection, getDocs } from "firebase/firestore/lite";
 import { useDispatch, useSelector } from "react-redux";
-import { burgerApi } from "../../api";
+
+import { FirebaseDB } from "../../firebase/config";
 import { setActiveBurger, setBurgerList } from "../burgers/burgersSlice";
 
 export const useBurgerStore = () => {
@@ -7,15 +9,19 @@ export const useBurgerStore = () => {
   const dispatch = useDispatch();
 
   const getBurgers = async () => {
-    const url = "https://burgers1.p.rapidapi.com/burgers";
-    const { data } = await burgerApi.get(url);
-    const burgerList = [];
-    for (const { id, name, description, ingredients } of data) {
-      const price = Math.random().toFixed(2) * (14 - 10 + 1) + 10;
-      let newBurger = { id, name, description, ingredients, price };
-      burgerList.push(newBurger);
+    const collectionRef = collection(FirebaseDB, "burgers");
+
+    try {
+      const docs = await getDocs(collectionRef);
+      const burgerList = [];
+      docs.forEach((burger) => {
+        burgerList.push(burger.data());
+      });
+      dispatch(setBurgerList(burgerList));
+    } catch (error) {
+      console.log(error);
+      console.log(error.message);
     }
-    dispatch(setBurgerList(burgerList));
   };
 
   const onActiveBurger = (burger) => {

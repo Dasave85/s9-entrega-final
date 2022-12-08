@@ -9,8 +9,7 @@ export const burgerSlice = createSlice({
       name: null,
       description: null,
       price: null,
-
-      ingredients: [],
+      img: null,
     },
   },
   reducers: {
@@ -22,7 +21,7 @@ export const burgerSlice = createSlice({
       state.activeBurger.name = payload.name;
       state.activeBurger.description = payload.description;
       state.activeBurger.price = payload.price;
-      state.activeBurger.ingredients = payload.ingredients;
+      state.activeBurger.img = payload.img;
     },
   },
 });

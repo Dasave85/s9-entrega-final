@@ -9,8 +9,8 @@ import { useBurgerStore } from "../../store/hooks/useBurgerStore";
 import { useUiStore } from "../../store/hooks";
 import { BurgerModal } from "./BurgerModal";
 
-export default function BurgerCard({ burger, img }) {
-  const { name, description } = burger;
+export default function BurgerCard({ burger }) {
+  const { name, description, img } = burger;
   const { onActiveBurger } = useBurgerStore();
   const newDescription = useMemo(() => {
     return description.length < 25

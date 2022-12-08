@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import "animate.css";
-import { burgerPhotos } from "../../assets/burgersPhotos";
 
 import { useAuthStore, useCartStore } from "../../store/hooks";
 
@@ -92,7 +91,7 @@ export const ShoppingCartPage = () => {
                               width: "100px",
                               borderRadius: "25px",
                             }}
-                            src={burgerPhotos[activeBurger.id]}
+                            src={activeBurger.img}
                             alt={activeBurger.name}
                           />
                         </ListItemAvatar>

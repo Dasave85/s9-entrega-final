@@ -19,6 +19,7 @@ export const RouterApp = () => {
   const { getBurgers } = useBurgerStore();
 
   useEffect(() => {
+    console.log("object");
     getBurgers();
   }, []);
 
