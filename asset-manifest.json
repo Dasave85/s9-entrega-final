@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/s9-entrega-final/static/css/main.99c29097.css",
-    "main.js": "/s9-entrega-final/static/js/main.3c57e1b4.js",
+    "main.js": "/s9-entrega-final/static/js/main.68259362.js",
     "static/media/—Pngtree—burger lettuce onion neon light_6406745.png": "/s9-entrega-final/static/media/—Pngtree—burger lettuce onion neon light_6406745.63b9058c24d9910e67f4.png",
     "static/media/burger_french_fries_4k_hd_food-1920x1080.jpg": "/s9-entrega-final/static/media/burger_french_fries_4k_hd_food-1920x1080.875098e61231941ba83e.jpg",
     "static/media/personal.jpg": "/s9-entrega-final/static/media/personal.c578e56dc61a2a38b71a.jpg",
     "static/media/local.webp": "/s9-entrega-final/static/media/local.8009a3da2393e966f0f2.webp",
     "index.html": "/s9-entrega-final/index.html",
     "main.99c29097.css.map": "/s9-entrega-final/static/css/main.99c29097.css.map",
-    "main.3c57e1b4.js.map": "/s9-entrega-final/static/js/main.3c57e1b4.js.map"
+    "main.68259362.js.map": "/s9-entrega-final/static/js/main.68259362.js.map"
   },
   "entrypoints": [
     "static/css/main.99c29097.css",
-    "static/js/main.3c57e1b4.js"
+    "static/js/main.68259362.js"
   ]
 }
