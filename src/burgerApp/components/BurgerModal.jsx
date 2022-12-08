@@ -18,6 +18,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: { xs: "100%", sm: "450px" },
+
   bgcolor: "background.paper",
   borderRadius: "5px",
   boxShadow: 2,
@@ -56,11 +57,15 @@ export const BurgerModal = () => {
                 </Typography>
                 <CardMedia
                   component="img"
+                  width="100%"
                   height="auto"
                   image={img}
                   alt={name}
                   sx={{ my: 2 }}
                 />
+                <Typography variant="h6" color="initial">
+                  Descripcion.
+                </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {description}
                 </Typography>

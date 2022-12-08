@@ -27,8 +27,8 @@ export default function BurgerCard({ burger }) {
   return (
     <Button disabled={isOpenburgerModal} onClick={buttonClick}>
       <BurgerModal />
-      <Card sx={{ width: 345 }}>
-        <CardMedia component="img" height="140" image={img} alt={name} />
+      <Card sx={{ width: 345, height: 300 }}>
+        <CardMedia component="img" height="160" image={img} alt={name} />
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
             {name}
